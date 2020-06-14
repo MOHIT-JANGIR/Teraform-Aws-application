@@ -1,0 +1,16 @@
+#initalise and download pulgins
+
+$ terraform init
+
+#check for errors
+
+$ terraform validate
+
+#build the infrastructure
+
+$ terraform apply -auto-approve
+
+#destroy the infrastructure
+
+$ terraform destroy -auto-approve
+
