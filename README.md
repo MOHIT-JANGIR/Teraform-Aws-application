@@ -46,6 +46,8 @@ what we are doing here is reading a file which will have CloudFront URL.
 We want to download our code from the git repository into the document root in our case /var/www/html. and store CloudFront URL into path.txt. so images can be accessed via CloudFront.
 
 12.OUTPUT
+
+
 here we run terraform init and apply cmd
 
 The public address will be print on the terminal copy that and paste in browser
