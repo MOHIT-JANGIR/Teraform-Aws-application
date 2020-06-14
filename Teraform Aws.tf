@@ -178,7 +178,7 @@ resource "null_resource" "images_repo" {
 
   provisioner "local-exec" {
 
-    command = "git clone https://github.com/ShubhamRasal/myimages.git my_images"
+    command = "git clone https://github.com/MOHIT-JANGIR/Teraform-Aws-application.git "
 
   }
 
