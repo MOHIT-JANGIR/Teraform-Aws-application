@@ -350,3 +350,9 @@ depends_on = [  aws_volume_attachment.ebs_attachment,aws_cloudfront_distribution
 
 }
 
+
+output "IP"{
+
+ value=aws_instance.webserver.public_ip
+
+}
