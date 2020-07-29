@@ -162,9 +162,9 @@ STEP 5 : Developer have uploded the code into github repo .
 
                 
 
-                git clone 
+                git clone https://github.com/MOHIT-JANGIR/Teraform-Aws-application.git
 
-https://github.com/MOHIT-JANGIR/Teraform-Aws-application.git
+
 
 cd Hybrid-Task1
 
@@ -196,7 +196,7 @@ enabled =true
 
 }
 
-[image](https://user-images.githubusercontent.com/61896468/88802558-daa2fb00-d1c8-11ea-891b-973f458067eb.png) 
+![image](https://user-images.githubusercontent.com/61896468/88802558-daa2fb00-d1c8-11ea-891b-973f458067eb.png) 
 
 STEP 7:  Create a Cloudfront using s3 bucket(which contains images) and use the Cloudfront URL to update in code in /var/www/html
 
