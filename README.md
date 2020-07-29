@@ -1,4 +1,7 @@
+![image](https://images.app.goo.gl/ECnAQVEUv4Fg2Q6m9)
+
 # Teraform-Aws-application
+## Infrastructure as Code with AWS and Terraform.
 What is Terraform?
 
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions. Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.
@@ -103,7 +106,7 @@ resource "aws_instance" "task1" {
 
   user_data = <<-EOF
 
-No alt text provided for this image
+![image](https://user-images.githubusercontent.com/61896468/88801707-b09d0900-d1c7-11ea-8283-7c1f236a3672.png) 
 
 STEP 4 :  Launch one Volume (EBS) and mount it into /var/www/html : this code will use to launch and mount the EBS volume.
 
