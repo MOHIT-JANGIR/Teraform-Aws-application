@@ -161,7 +161,7 @@ STEP 5 : Developer have uploded the code into github repo .
 
                 git clone 
 
-https://github.com/Amar-tiwary18/HMC_Task1.git
+https://github.com/MOHIT-JANGIR/Teraform-Aws-application.git
 
 cd Hybrid-Task1
 
