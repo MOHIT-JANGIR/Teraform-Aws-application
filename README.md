@@ -1,4 +1,4 @@
-![image](https://images.app.goo.gl/ECnAQVEUv4Fg2Q6m9)
+![image](images.jpeg)
 
 # Teraform-Aws-application
 ## Infrastructure as Code with AWS and Terraform.
