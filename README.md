@@ -140,7 +140,7 @@ variable "rhelkey-file"{
 
       default = "rhelkey-file"
 
-No alt text provided for this image
+![image](https://user-images.githubusercontent.com/61896468/88802660-00c89b00-d1c9-11ea-8826-82a40949f48b.png) 
 
 STEP 5 : Developer have uploded the code into github repo .
 
@@ -196,13 +196,13 @@ enabled =true
 
 }
 
-No alt text provided for this image
+[image](https://user-images.githubusercontent.com/61896468/88802558-daa2fb00-d1c8-11ea-891b-973f458067eb.png) 
 
 STEP 7:  Create a Cloudfront using s3 bucket(which contains images) and use the Cloudfront URL to update in code in /var/www/html
 
-No alt text provided for this image
+![image](https://user-images.githubusercontent.com/61896468/88802828-3c636500-d1c9-11ea-8c60-bad119a271c6.png) 
 
 Finally the webpage I created is deployed.
 
-No alt text provided for this image
+![image](https://user-images.githubusercontent.com/61896468/88802900-543ae900-d1c9-11ea-8498-13e6109fe2f0.png) 
 
