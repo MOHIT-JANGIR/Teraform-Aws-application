@@ -142,7 +142,7 @@ resource "aws_instance" "task1" {
                 mount /dev/xvdf1 /var/www/html
                 
                 git clone 
-https://github.com/Amar-tiwary18/HMC_Task1.git
+https://github.com/MOHIT-JANGIR/Teraform-Aws-application.git
 		cd Hybrid-Task1
 		cp index.html /var/www/html
              
