@@ -2,55 +2,55 @@
 
 # Teraform-Aws-application
 ## Infrastructure as Code with AWS and Terraform.
-What is Terraform?
+# What is Terraform?
 
-Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions. Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.
+## Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions. Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.
 
-What is AWS cloud?
+# What is AWS cloud?
 
-Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud platform, offering over 175 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.
+## `Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud platform, offering over 175 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.
+`
+# Description of Task :
 
-Description of Task :
+# Task : we have to create or launch application using Trraform.
 
-Task : we have to create or launch application using Trraform.
+## 1. Create the key and security group which allow the port 80.
 
-1. Create the key and security group which allow the port 80.
+## 2. Launch EC2 instance.
 
-2. Launch EC2 instance.
+## 3. In this Ec2 instance use the key and security group which we have created in step 1.
 
-3. In this Ec2 instance use the key and security group which we have created in step 1.
+## 4. Launch one Volume (EBS) and mount that volume into /var/www/html
 
-4. Launch one Volume (EBS) and mount that volume into /var/www/html
+## 5. Developer have uploded the code into github repo also the repo has some images.
 
-5. Developer have uploded the code into github repo also the repo has some images.
+## 6. Copy the github repo code into /var/www/html
 
-6. Copy the github repo code into /var/www/html
+## 7. Create S3 bucket, and copy/deploy the images from github repo into the s3 bucket and change the permission to public readable.
 
-7. Create S3 bucket, and copy/deploy the images from github repo into the s3 bucket and change the permission to public readable.
+## 8 Create a Cloudfront using s3 bucket(which contains images) and use the Cloudfront URL to update in code in /var/www/html
 
-8 Create a Cloudfront using s3 bucket(which contains images) and use the Cloudfront URL to update in code in /var/www/html
+# Install and setup terraform in your system.
 
-Install and setup terraform in your system.
+## For the first time you have to use terraform init to initialize.
 
-For the first time you have to use terraform init to initialize.
+## Then we have to create a file with .tf extension using any editor and terraform.
 
-Then we have to create a file with .tf extension using any editor and terraform.
+# STEP 1: Security Groups : This will use to create our security group for launching the instances.
 
-STEP 1: Security Groups : This will use to create our security group for launching the instances.
-
-resource "aws_security_group" "task1-securitygroup" {
+```resource "aws_security_group" "task1-securitygroup" {
 
   name        = "task1-securitygroup"
 
   description = "Allow SSH AND HTTP"
 
   vpc_id      = "vpc-b66c70de"
+```
+# STEP 2: Create the key and security group which allow the port 80.
 
-STEP 2: Create the key and security group which allow the port 80.
+# This code is basically used for allowing the SSH from port 22 and HTTP port 80
 
-This code is basically used for allowing the SSH from port 22 and HTTP port 80
-
-  ingress {
+```  ingress {
 
     description = "SSH"
 
@@ -89,9 +89,10 @@ This code is basically used for allowing the SSH from port 22 and HTTP port 80
     cidr_blocks = ["0.0.0.0/0"]
 
   }
+```
+# STEP 3: Launching the Ec2 instance : in this Ec2 instance use the key and security group which we have created by the below code
 
-STEP 3: Launching the Ec2 instance : in this Ec2 instance use the key and security group which we have created by the below code
-
+```
 resource "aws_instance" "task1" {
 
   ami           = "ami-0447a12f28fddb066"
@@ -105,11 +106,13 @@ resource "aws_instance" "task1" {
   security_groups = [ "task1-securitygroup" ]
 
   user_data = <<-EOF
+```
 
 ![image](https://user-images.githubusercontent.com/61896468/88801707-b09d0900-d1c7-11ea-8283-7c1f236a3672.png) 
 
-STEP 4 :  Launch one Volume (EBS) and mount it into /var/www/html : this code will use to launch and mount the EBS volume.
+# STEP 4 :  Launch one Volume (EBS) and mount it into /var/www/html : this code will use to launch and mount the EBS volume.
 
+```
 resource "aws_ebs_volume" "task1" {
 
   availability_zone = "ap-south-1a"
@@ -139,12 +142,14 @@ variable "rhelkey-file"{
       type = string
 
       default = "rhelkey-file"
+```
 
 ![image](https://user-images.githubusercontent.com/61896468/88802660-00c89b00-d1c9-11ea-8826-82a40949f48b.png) 
 
-STEP 5 : Developer have uploded the code into github repo .
+# STEP 5 : Developer have uploded the code into github repo .
 
- user_data = <<-EOF
+#  user_data = <<-EOF
+```
 
                 #! /bin/bash
 
@@ -160,9 +165,10 @@ STEP 5 : Developer have uploded the code into github repo .
 
                 mount /dev/xvdf1 /var/www/html
 
-                
 
-                git clone https://github.com/MOHIT-JANGIR/Teraform-Aws-application.git
+
+
+git clone https://github.com/MOHIT-JANGIR/Teraform-Aws-application.git
 
 
 
@@ -170,10 +176,13 @@ cd Hybrid-Task1
 
 cp index.html /var/www/html
 
-             
+       
+```
 
- STEP 6: Create S3 bucket: code for the my s3 bucket is below:
 
+#  STEP 6: Create S3 bucket: code for the my s3 bucket is below:
+
+```
 resource "aws_s3_bucket" "task1" {
 
     bucket = "automatebucket1"
@@ -195,14 +204,15 @@ enabled =true
     }
 
 }
+```
 
 ![image](https://user-images.githubusercontent.com/61896468/88802558-daa2fb00-d1c8-11ea-891b-973f458067eb.png) 
 
-STEP 7:  Create a Cloudfront using s3 bucket(which contains images) and use the Cloudfront URL to update in code in /var/www/html
+# STEP 7:  Create a Cloudfront using s3 bucket(which contains images) and use the Cloudfront URL to update in code in /var/www/html
 
 ![image](https://user-images.githubusercontent.com/61896468/88802828-3c636500-d1c9-11ea-8c60-bad119a271c6.png) 
 
-Finally the webpage I created is deployed.
+# Finally the webpage I created is deployed.
 
 ![image](https://user-images.githubusercontent.com/61896468/88802900-543ae900-d1c9-11ea-8498-13e6109fe2f0.png) 
 
